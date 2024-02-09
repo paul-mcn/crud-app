@@ -6,7 +6,7 @@ const db = new sqlite3.Database("./db");
 
 try {
 	const sql =
-		"CREATE TABLE IF NOT EXISTS meals(id TEXT PRIMARY KEY,name,description,ingredients,image)";
+		"CREATE TABLE IF NOT EXISTS meals(id TEXT PRIMARY KEY,name,description,ingredients,image,price,rating)";
 	db.run(sql);
 } catch (error) {
 	console.log(error);

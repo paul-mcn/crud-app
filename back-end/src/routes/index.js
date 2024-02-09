@@ -18,28 +18,35 @@ app.get("/", async (req, res) => {
 });
 
 app.put("/create", async (req, res, next) => {
-	const { name, description, ingredients, image } = req.body;
+	const { name, description, ingredients, image, price, rating } = req.body;
 	try {
-		await createMeal(name, description, ingredients, image);
-		res.sendStatus(201);
+		const { uniqueId } = await createMeal(
+			name,
+			description,
+			ingredients,
+			image,
+			price,
+			rating,
+		);
+		res.status(201).send({ createdId: uniqueId });
 	} catch (error) {
 		next(error);
 	}
 });
 
 app.put("/update", async (req, res, next) => {
-	const { id, name, description, ingredients, image } = req.body;
+	const { id, name, description, ingredients, image, price, rating } = req.body;
 	try {
-		await updateMeal(id, name, description, ingredients, image);
+		await updateMeal(id, name, description, ingredients, image, price, rating);
 		res.sendStatus(204);
 	} catch (error) {
 		next(error);
 	}
 });
 
-app.delete("/delete", async (req, res, next) => {
+app.delete("/delete/:id", async (req, res, next) => {
 	try {
-		await deleteMeal(req.body.id);
+		await deleteMeal(req.params.id);
 		res.sendStatus(204);
 	} catch (error) {
 		next(error);

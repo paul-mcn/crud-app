@@ -1,6 +1,6 @@
 # CRUD Meal app
 ## Get Started
-There are two services for this app, frontend and backend. The frontend will not working without the backend service. 
+There are two services for this app, frontend and backend. The frontend will not work without the backend service. 
 
 ### Clone repo
 #### Clone the repo

@@ -1,13 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { HomePage } from './pages/HomePage';
+import "./App.css";
+import Header from "./components/Header";
+import HomePage from "./pages/HomePage";
+import "@fontsource/roboto";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 function App() {
 	return (
-		<div className="App">
-			<HomePage />
-    </div>
+		<QueryClientProvider client={queryClient}>
+			<div className="App">
+				<Header />
+				<HomePage />
+			</div>
+		</QueryClientProvider>
 	);
 }
 

@@ -1,6 +1,6 @@
-import { faPlus, faSort, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faSort } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ChangeEvent, useEffect, useMemo, useState } from "react";
+import { ChangeEvent, useMemo, useState } from "react";
 import Button from "../components/Button";
 import DropdownButton from "../components/DropdownButton";
 import EditMealForm from "../components/EditMealForm";
